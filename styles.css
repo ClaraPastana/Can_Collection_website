@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    background-color: #000000;
+    color: #ffffff;
+    overflow: hidden;
+
+}
+
+header {
+ position: fixed;
+ width: 85vw;
+ left: 50%;
+ transform: translateX(-50%);
+ display: grid;
+ align-items: center;
+ grid-template-columns: 1fr 600px;
+ gap: 100px;
+ z-index: 2;
+
+ ;
+    & img {
+        width: 90px;
+        height: auto;
+        margin: 20px;
+    }
+
+    & nav {
+        & ul{
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            gap: 20%px;
+        }
+    }
+}
+
+section {
+    background-image: radial-gradient(#ff0095, #00098d);
+    height: 100vh;
+    position: relative;
+
+    & .list {
+        width: 80vw;
+        margin: auto;
+        height: 100%;
+        position: relative;
+
+        & .item {
+            position: absolute; 
+            inset: 0; /*set top, bottom etc as 0!>*/
+
+
+                & .can-img {
+                    position: absolute;
+                    top : 50%;
+                    left: 8%;
+                    transform: translateY(-50%);
+                    width: 60%;
+
+                    & img {
+                        width: 60%;
+                        transform: rotate(9deg);
+                    }
+                }
+
+            & .content {
+             position: absolute;
+             right: 300px;
+             width: 70%;
+             height: 100%;
+             display: flex; 
+             flex-direction: column;  
+             justify-content: center;
+             align-items: end;
+             gap: 20px;
+
+             & .can-info {
+                font-weight: bold;
+                color: #e6e6e6;
+                font-size: 12px;
+                text-align: right;
+                max-width: 500px;
+             }
+
+             & h2{
+                font-size: 5em;
+                line-height: 1em;
+                font-weight: bold;
+                color: #ffffff;
+                margin-top: -3%;
+                
+             }
+
+             & .more_information{
+                border-radius: 30px;
+                background-color: #ff0095;
+                color: #ffffff;
+                border: none;
+                padding: 10px 20px;
+                height: 35px;
+                width: 120px;
+                cursor: pointer;
+                font-size: 14px;
+                text-transform: uppercase;
+             }
+            }
+
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 200px;
+                width: 100%;
+                top: 50%;
+                border-top: 0.5px solid #ffffff;
+            }
+    }
+}
+
+.arrow {
+    width: 80vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -25px);
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    & button:nth-child(1) {
+        & img {   
+            transform: rotate(180deg);
+        }
+    }
+
+    & button {
+        top: 60%;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+
+        & img {
+            width: 30px;
+            margin-top: 4px;
+            cursor: pointer;
+        }
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+    }
+}
+
+& .indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+
+    & .number {
+        font-size: 4.6em;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    & ul {
+        display: flex;
+        gap: 10px;
+
+        & li {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #ff0095;
+            border-radius: 5px;
+            transition: 0.5s;
+            opacity: 0.5;
+    }
+
+        &.active {
+            opacity: 1;
+            background-color: #ffffff;
+        }
+    }
+
+}
+}
